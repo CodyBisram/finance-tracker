@@ -4,7 +4,7 @@
 
 <% if @stock %>
   <div class="card card-header results-block">
-    <strong>Symbol: </strong> <%= (@stock.ticker).upcase %>
+    <strong>Symbol: </strong> <%= @stock.ticker %>
     <strong>Name: </strong> <%= @stock.name %>
     <strong>Price: $</strong> <% if @stock.last_price %><%= (@stock.last_price).round(2) %><% end %>
     <% if current_user.can_track_stock?(@stock.ticker) %>

@@ -2,6 +2,7 @@ class StocksController < ApplicationController
 
   def search
     if params[:stock].present?
+      params[:stock].upcase!
       @stock = Stock.new_lookup(params[:stock])
       if @stock
         respond_to do |format|
