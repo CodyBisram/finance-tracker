@@ -6,7 +6,7 @@
   <div class="card card-header results-block">
     <strong>Symbol: </strong> <%= (@stock.ticker).upcase %>
     <strong>Name: </strong> <%= @stock.name %>
-    <strong>Price: $</strong> <% if stock.last_price %><%= (@stock.last_price).round(2) %><% end %>
+    <strong>Price: $</strong> <% if @stock.last_price %><%= (@stock.last_price).round(2) %><% end %>
     <% if current_user.can_track_stock?(@stock.ticker) %>
       <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), class: "btn btn-sm btn-success ml-2", method: :post %>
     <% else %>
